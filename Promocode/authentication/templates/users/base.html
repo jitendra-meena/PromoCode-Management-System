@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
+  <!-- animation css -->
+  <link rel="stylesheet" href="/static/assets/css/aos.css">
+  <!-- fontawesome css -->
+  <link rel="stylesheet" href="/static/assets/css/all.css">
+  <!--  owl Carousel css -->
+  <link rel="stylesheet" href="/static/assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/static/assets/css/owl.theme.default.css">
+  <!-- custom style css -->
+  <link rel="stylesheet" href="/static/assets/css/user_style.css">
+
+  <link rel="stylesheet" href="/static/assets/css/style.css">
+  <link rel="stylesheet" href="/static/assets/css/vendor_style.css">
+  <title>Salonlet</title>
+
+</head>
+
+<body>
+
+  <!-- navbar start here -->
+  <nav class="nav nav_menu navbar navbar-expand-lg">
+    <div class="container">
+      <div class="navbar_menu">
+        <a class="navbar-brand" href="javascript:;">
+          <img src="/static/assets/images/logo.png" class="img-fluid logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'vendor_home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'vendor_service' %}">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio1">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'How_it_work' %}">How It Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'Contact_us' %}">Contact Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="javascript:;" id="myprofile_dropdown" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                My Profile
+              </a>
+              <div class="dropdown-menu sub_menu" aria-labelledby="myprofile_dropdown">
+                <a class="dropdown-item" href="{% url 'edit_vendorprofile' %}">Edit Profile</a>
+                {% if request.user.is_authenticated %}
+              <form action="{% url 'vendorlogout' %}" method="POST">
+                {% csrf_token %}
+              <a class="dropdown-item"><input type="submit" value="Logout" class="logout_btn"></a>
+              </form>
+              {% endif %}
+                <!-- <a class="dropdown-item" href="{% url 'vendorlogout' %}">Logout</a> -->
+              </div>
+            </li>
+            <li class="nav-item notify_icon">
+              <a class="nav-link" href="{% url 'vendor_notification' %}"><i class="fas fa-bell"></i></a>
+            </li>
+            <li class="nav-item nav_search_bar">
+              <a href="javascript:;" class="search__icon"> <i class="fas fa-search"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- navbar close here -->
+
+  {% block vendorhome %}
+  {% endblock vendorhome %}
+
+  
+  {% block contactvendor %}
+  {% endblock contactvendor %}
+
+  {% block workvendor %}
+  {% endblock workvendor %}
+ 
+  {% block vendorprofile %}
+  {% endblock vendorprofile %}
+  
+  {% block vendornotification %}
+  {% endblock vendornotification %}
+
+  {% block servicevendor %}
+  {% endblock servicevendor %}
+  
+
+  <!-- Footer section start here -->
+  <footer class="footer_section">
+    <div class="container">
+      <div class="footer_box">
+        <div class="foot_top">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="{% url 'vendor_home' %}">Home</a>
+            </li>
+            <!-- <li class="list-inline-item">
+              <a href="javascript:;">Privacy Policy</a>
+            </li> -->
+            <li class="list-inline-item">
+              <a href="{% url 'How_it_work' %}">How It Work</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="{% url 'Contact_us' %}">Contact Us</a>
+            </li>
+          </ul>
+          <ul class="list-inline ml-auto foot_app">
+            <li class="list-inline-item">
+              <a href="javascript:;" class="andrd_app app_dwn">
+                <i class="fab fa-apple"></i>
+                <h4 class="mb-0">
+                  <span>Download From</span>
+                  <p>App Store</p>
+                </h4>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="javascript:;" class="andrd_app app_dwn">
+                <i class="fab fa-google-play"></i>
+                <h4 class="mb-0">
+                  <span>Download From</span>
+                  <p>Google Play</p>
+                </h4>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <hr>
+        <div class="foot_botm">
+          <img src="/static/assets/images/logo.png" alt="" class="foot_logo img-fluid">
+          <p> <i class="far fa-copyright"></i> 2021 Salonlet. All rights reserved</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer section start here -->
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="/static/assets/js/jquery-3.2.1.slim.min.js"></script>
+  <script src="/static/assets/js/popper.min.js"></script>
+  <script src="/static/assets/js/bootstrap.min.js"></script>
+  <!-- animation js -->
+  <script src="/static/assets/js/aos.js"></script>
+  <!-- animation owl Carousel -->
+  <script src="/static/assets/js/owl.carousel.min.js"></script>
+  <!-- Custom script js -->
+  <script src="/static/assets/js/script.js"></script>
+  <script src="/static/assets/js/embed.js"></script>
+
+
+
+  <script>
+    $(function () {
+      $("#editForm").change(function () {
+        if ($(this).is(":checked")) {
+          $(".vendor_service_edit").show();
+          $(".vendor_service_view").hide();
+        } else {
+          $(".vendor_service_edit").hide();
+          $(".vendor_service_view").show();
+        }
+      });
+    });
+  </script>
+  
+
+
+</body>
+
+</html>

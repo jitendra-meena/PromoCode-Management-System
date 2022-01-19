@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
+  <!-- animation css -->
+  <link rel="stylesheet" href="/static/assets/css/aos.css">
+  <!-- fontawesome css -->
+  <link rel="stylesheet" href="/static/assets/css/all.css">
+  <!-- custom style css -->
+  <link rel="stylesheet" href="/static/assets/css/style.css">
+  <title>User</title>
+
+</head>
+
+<body>
+
+
+
+
+  <!-- modal login-signup form start here -->
+  <div class="vendor_login_form">
+    <h2 class="text-center position-relative pb-4">Welcome To User</h2>
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-2 col-12"></div>
+        <div class="col-md-8 col-12">
+          <div class="">
+            <div class="vendor_options-container">
+              <div class="vendor_options-text">
+                <div class="vender-card-style">
+                  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item list-inline-item">
+                      <a class="nav-link active" id="pills-login-tab" data-toggle="pill" href="#pills-login" role="tab"
+                        aria-controls="pills-login" aria-selected="true">Login</a>
+                    </li>
+                    <li class="nav-item list-inline-item">
+                      <a class="nav-link" id="pills-signup-tab" data-toggle="pill" href="#pills-signup" role="tab"
+                        aria-controls="pills-signup" aria-selected="false">Signup</a>
+                    </li>
+
+                  </ul>
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-login" role="tabpanel"
+                      aria-labelledby="pills-login-tab">
+                      <div>
+                        <h2>Login</h2>
+                        <h5 id="login_msg" class="text-center text-success"></h5>
+                        <form class="" method="POST" action="{% url 'userlogin' %}">
+                          {% csrf_token %}
+                          <fieldset class="forms_fieldset">
+                            <div class="form-group">
+                              <input type="text" id="name" name="username" class="form-control text-dark" required>
+                              <label class="vender-form-control-placeholder" for="name">Username</label>
+                            </div>
+                            <div class="form-group">
+                              <input type="password" id="password" name="password" class="form-control text-dark" required>
+                              <label class="vender-form-control-placeholder" for="password">Password</label>
+                            </div>
+                          </fieldset>
+                          <div class="forms_buttons">
+                            <a href="" class="forms_buttons-forgot ">Forgot password ?</a>
+                            <input type="submit" value="Log In" class="vendor_buttons-action">
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade " id="pills-signup" role="tabpanel" aria-labelledby="pills-signup-tab">
+                      <div>
+                        <h2>Sign Up</h2>
+                        <h6 id="output" class="text-warning text-center"></h6>
+                        <form id="myform" class="forms_form" action="{% url 'register' %}" method="POST">
+                          {% csrf_token %}
+                          <fieldset class="forms_fieldset">
+                            <div class="row text-dark">
+                              
+                              <div class="com-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                  <input type="text" id="username" name="username" class="form-control text-dark" required>
+                                  <label class="vender-form-control-placeholder" for="username">Username</label>
+                                </div>
+                              </div>
+                              
+                              <div class="com-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                  <input type="password" id="regpassword" name="password" class="form-control text-dark" required>
+                                  <label class="vender-form-control-placeholder" for="regpassword">Password</label>
+                                </div>
+                              </div>
+                              <div class="com-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                  <input type="password" id="cnfpassword" name="confirm_password" class="form-control text-dark"
+                                    required>
+                                  <label class="vender-form-control-placeholder" for="cnfpassword">Confirm
+                                    Password</label>
+                                </div>
+                              </div>
+
+                                                       </div>
+                          </fieldset>
+                          <div class="forms_buttons">
+                            <input id="submitdata" type="submit" value="Sign up"  class="vendor_buttons-action"  >
+                            
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+  <div class="otp_popup" id="pop_up_div">
+    <div class="modal fade" id="otp_genrate" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <button type="button" class="close close_modal" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"> X </span>
+          </button>
+          <div class="otp_form forms_fieldset">
+            <h4 id="otp_msg" class="text-white font-weight-bolder"></h4>
+            <form id="submit_otp" method="POST">
+              {% csrf_token %}
+              <div class="form-group">
+                <input type="text" id="otp" name="otp" class="form-control" required>
+                <label class="form-control-placeholder" for="otp">OTP</label>
+              </div>
+              <button type="submit" class="btn">Submit</button>
+            </form>
+            <form method="GET" action="">
+              <a class="rsnd_otp text-decoration-none"> <input type="submit" value="Resend OTP"></a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="/static/assets/js/jquery-3.2.1.slim.min.js"></script>
+  <script src="/static/assets/js/popper.min.js"></script>
+  <script src="/static/assets/js/bootstrap.min.js"></script>
+  <!-- animation js -->
+  <script src="/static/assets/js/aos.js"></script>
+  <!-- Custom script js -->
+  <script src="/static/assets/js/script.js"></script>
+
+
+  <!-- js for fetching address -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXFc7HjeYZbFQxnYjJerXZv618R_Ir96o&libraries=places&callback=initAutocomplete"
+    defer></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AbayAntUExDsHM81WQzj0pkmtGFdc&libraries=places&callback=initAutocomplete"
+    defer"></script>
+  <script>
+    google.maps.event.addDomListener(window, 'load', function () {
+      var places = new google.maps.places.Autocomplete(document.getElementById('Address'));
+      google.maps.event.addListener(places, 'place_changed', function () {
+        var place = places.getPlace();
+        var address = place.formatted_address;
+        var latitude = place.geometry.location.lat();
+        var longitude = place.geometry.location.lng();
+        var latlng = new google.maps.LatLng(latitude, longitude);
+        var geocoder = geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            if (results[0]) {
+              var address = results[0].formatted_address;
+              var pin = results[0].address_components[results[0].address_components.length - 1].long_name;
+              var country = results[0].address_components[results[0].address_components.length - 2].long_name;
+              var state = results[0].address_components[results[0].address_components.length - 3].long_name;
+              var city = results[0].address_components[results[0].address_components.length - 4].long_name;
+              // document.getElementById('txtCountry2').value = country;
+              // document.getElementById('state2').value = state;
+              // document.getElementById('city2').value = city;
+              // document.getElementById('zip_code2').value = pin;
+              // document.getElementById('location_latitude2').value = latitude;
+              // document.getElementById('location_longitude2').value = longitude;
+
+              $('input[name="latitude"]').val(place.geometry.location.lat());
+              $('input[name="longitude"]').val(place.geometry.location.lng());
+
+              $('#country').val(country).attr('readonly', true);
+              $('#state').val(state).attr('readonly', true);
+              $('#city').val(city).attr('readonly', true);
+              $('#zipcode').val(pin).attr('readonly', true);
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

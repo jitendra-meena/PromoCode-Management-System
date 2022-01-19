@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
+</head>
+<body>
+    <h2>Username - {{request.user}}</h2>
+
+
+                                    <h1>Apply For Promo Code </h1>
+    <form method="POST" action="{% url 'applycode' %}">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Birthday Date </label>
+          <input type="date" name ="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted"></small>
+        </div>
+
+
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Gender</label>
+            <select class="form-control"  name="gender" id="exampleFormControlSelect1">
+              <option value="MALE">MALE</option>
+              <option value="FEMALE">FEMALE</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Order Amount </label>
+            <input type="text" name ="amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter order amount">
+            <small id="emailHelp" class="form-text text-muted"></small>
+          </div>
+        
+         
+        
+        
+<button type="submit" class="btn btn-primary">Apply</button>
+</form>
+
+<h1>User Promo Code Lists </h1>
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">User </th>
+        <th scope="col">Promo Code</th>
+        <th scope="col">Birthday</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Order Amount</th>
+        <th scope="col">Apply Promo code</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in code %}  
+      <tr>
+        
+
+        <td>{{i.user}}</td>
+        <td>{{i.codes}}</td>
+        <td>{{i.birthday}}</td>
+        <td>{{i.gender}}</td>
+
+        <td>{{i.order_amount}}</td>
+      <td> 
+        <a title="Apply" href="{% url 'apply' %}/{{i.id}}" class="btn btn-primary">
+        <i class="fa fa-trash"></i>Apply</a>
+        
+        </td> 
+
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+
+
+  
+
+<div class="container " >
+        <form action="{% url 'logout' %}" method="POST">
+        {% csrf_token %}
+
+        <div class="row">
+            <div class="col-md-12 float-right">
+                <button type="submit" value="Logout" class="btn btn-outline-warning">Logout</button>
+            </div>
+        </div>
+        </form>
+</div>
+
+</body>
+</html>

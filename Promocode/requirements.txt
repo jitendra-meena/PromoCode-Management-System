@@ -1,0 +1,6 @@
+asgiref==3.4.1
+backports.zoneinfo==0.2.1
+Django==4.0
+Pillow==8.4.0
+sqlparse==0.4.2
+tzdata==2021.5

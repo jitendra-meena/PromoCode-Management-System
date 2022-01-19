@@ -1,0 +1,472 @@
+.space_blank {
+    width: 100%;
+    height: 100px;
+}
+
+/* vendor home page start here */
+
+.vndr_banner {
+    background: radial-gradient(circle, rgba(21, 32, 36, 1) 0%, rgba(0, 0, 0, 1) 80%);
+    height: 250px;
+}
+
+.vndr_banner_txt {
+    text-align: center;
+    color: #fff;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.vndr_banner_txt h1 {
+    font-size: 60px;
+}
+
+.vndr_service_section {
+    padding: 65px 0;
+    text-align: center;
+}
+
+.vndr_service_section h2 {
+    font-family: 'Courgette', cursive;
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.vndr_srv_box ul {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto;
+}
+
+.vndr_srv_box ul li {
+    margin: 10px 15px !important;
+}
+
+.vnd_service_show {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    padding: 15px;
+}
+
+.vnd_service_show_img {
+    background: #152024;
+    margin-bottom: 8px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.vnd_service_show_img img {
+    width: 50px;
+    filter: brightness(0) invert(1);
+}
+
+.vnd_service_show h5 {
+    color: #152024;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.vndr_service_section h2 {
+    font-family: 'Courgette', cursive;
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+/* portfolio section start here */
+
+
+.vndr_home_heading {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+}
+
+.vndr_home_heading h2 {
+    font-family: 'Courgette', cursive;
+    font-size: 50px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.vndr_home_heading .prfl_view_all {
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    color: #152024;
+    border: 1px solid #152024;
+    padding: 5px 25px;
+    border-radius: 25px;
+    text-decoration: none !important;
+    transition: .5s all ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.vndr_home_heading .prfl_view_all span {
+    position: relative;
+}
+
+.vndr_home_heading .prfl_view_all:hover {
+    color: #fff;
+    transition: .5s all ease;
+}
+
+.vndr_home_heading .prfl_view_all::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #152024;
+    width: 0;
+    height: 100%;
+    border-radius: 25px;
+    transition: .5s all ease;
+}
+
+.vndr_home_heading .prfl_view_all:hover:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .5s all ease;
+}
+
+.vndr_hm_prtf_img {
+    position: relative;
+    margin: 15px auto;
+    width: 100%;
+    height: 250px;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+    transition: .5s all ease;
+    cursor: pointer;
+}
+
+.vndr_hm_prtf_img img {
+    height: 100%;
+    width: 100%;
+    filter: blur(.8px);
+    transition: .5s all ease;
+}
+
+.vndr_hm_prtf_img:hover img {
+    filter: blur(0);
+    transition: .5s all ease;
+}
+
+.vndr_hm_prtf_img:hover {
+    transform: scale(1.2);
+    transition: .5s all ease;
+}
+
+/* portfolio section start here */
+
+/* vendor home page close here */
+
+
+
+
+
+.vendor_service_names {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px auto;
+}
+
+.vendor_service_names .nav-link {
+    color: #152024;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+}
+
+.vendor_service_names .nav-link.active {
+    background: transparent;
+    color: #152024;
+    border-bottom: 2px solid #152024;
+    border-radius: 0;
+}
+
+/* ****************************************** */
+
+
+.edit_btn {
+    float: right;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none !important;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #152024;
+    padding: 5px 25px;
+    border-radius: 5px;
+    color: #fff;
+    transition: .5s all ease;
+}
+
+.edit_btn:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
+    transition: .5s all ease;
+}
+
+.vendor_service_edit {
+    display: none;
+}
+
+input#editForm {
+    visibility: hidden;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+
+.vnd_srv_head_view {
+    margin-bottom: 10px;
+}
+
+.vendor_service_view h4 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px !important;
+    display: inline-block;
+}
+
+.serv_view_delt {
+    margin-left: 8px;
+    color: #de0101;
+    font-size: 15px;
+    font-weight: 600;
+    border: 1px solid #de0101;
+    padding: 4px 15px;
+    border-radius: 5px;
+    text-decoration: none !important;
+    background: rgb(222 1 1 / 9%);
+    transition: .5s all ease;
+}
+
+.serv_view_delt:hover {
+    background: #de0101;
+    color: #fff !important;
+    transition: .5s all ease;
+}
+
+.serv_prc_view li {
+    background: rgb(21 32 36 / 20%);
+    padding: 2px 15px;
+    margin: 5px auto;
+    border-radius: 5px;
+    color: #152024;
+}
+
+.vendor_service_details {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: 25px auto;
+    background: #fff;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 30%);
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.serv_prc_view {
+    margin-bottom: 8px;
+}
+
+.serv_prc_view span {
+    margin-left: 5px;
+}
+
+.serv_type_view {
+    margin: 15px auto !important;
+}
+
+.serv_type_view h5 {
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.serv_type_view p {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.serv_type_view li ul li:last-child {
+    position: relative;
+    padding-left: 10px;
+}
+
+.serv_type_view li ul li:last-child::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: #152024;
+}
+
+/*Checkboxes styles start*/
+.custom_checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.custom_checkbox input[type="checkbox"]+label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #152024;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.custom_checkbox input[type="checkbox"]+label:last-child {
+    margin-bottom: 0;
+}
+
+.custom_checkbox input[type="checkbox"]+label:before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #152024;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: .6;
+    -webkit-transition: all .12s, border-color .08s;
+    transition: all .12s, border-color .08s;
+}
+
+.custom_checkbox input[type="checkbox"]:checked+label:before {
+    width: 10px;
+    top: -5px;
+    left: 5px;
+    border-radius: 0;
+    opacity: 1;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/*Checkboxes styles close*/
+
+.vendor_service_edit .form-group {
+    display: flex;
+    align-items: center;
+}
+
+.left_field {
+    width: 150px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.vendor_service_edit .custom_checkbox {
+    display: flex;
+    margin-bottom: 0;
+}
+
+.right_field {
+    width: calc(100% - 160px);
+    margin-left: auto;
+}
+
+.right_field label {
+    padding-left: 28px !important;
+    font-size: 15px !important;
+}
+
+.serv_edit_btn {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.serv_edit_btn button {
+    padding: 5px 22px;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 5px 10px;
+    border-radius: 0;
+    border: 1px solid #152024;
+    transition: .5s all ease;
+}
+.edit_serv_update {
+    background: #152024;
+    color: #fff;
+}
+
+.edit_serv_cancel {
+    background: #fff;
+    color: #152024;
+}
+.serv_edit_btn button:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
+    transition: .5s all ease;
+}
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #495057;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(73 80 87 / 50%);
+}
+
+
+.add_service_form .form-group {
+    display: flex;
+    align-items: center;
+}
+
+.add_service_form .custom_checkbox {
+    display: flex;
+    margin-bottom: 0;
+}
+.add_service_form .modal-dialog {
+    display: flex;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    margin: 45px auto;
+}
+
+.add_service_form .modal-header {
+    background: #152024;
+    color: #fff;
+}
